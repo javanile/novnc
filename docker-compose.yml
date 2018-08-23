@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+
+  novnc:
+    build: .
+    environment:
+      - REMOTE_HOST=localhost
+      - REMOTE_PORT=5900
+    ports:
+      - 8081:8081
+    links:
+      - selenium
+
+  selenium:
+    image: selenium/standalone-chrome-debug:3.11.0-californium
+    environment:
+      - VNC_NO_PASSWORD=1
+      - SCREEN_WIDTH=1200
+      - SCREEN_HEIGHT=675
+    ports:
+      - 4444:4444
+      - 5900:5900
+
+  lint:
+    image: replicated/dockerfilelint
+    working_dir: /src
+    volumes: [ '.:/src' ]
+    command: [ 'Dockerfile' ]
