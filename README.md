@@ -6,7 +6,7 @@ This image is intended to run a small standalone server that can target either o
 [![](https://images.microbadger.com/badges/version/javanile/novnc.svg)](https://microbadger.com/images/javanile/novnc "Get your own version badge on microbadger.com")
 
 ## Usage
-1. Place NoVNC service into your docker-compose.yml file
+**STEP #1** - Place NoVNC service into your docker-compose.yml file
 ```yml
 version: '2'
 
@@ -46,7 +46,7 @@ Two environment variables exist in the docker file for configuration REMOTE_HOST
 - **REMOTE_PORT**: Port that the VNC Server is listening on - defaults to *5900*
 
 ### Ports
-**8081** is exposed by default.
+- **8081** is exposed by default.
 
 ## Standalone usage
 ```bash
