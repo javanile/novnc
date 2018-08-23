@@ -6,7 +6,7 @@ This image is intended to run a small standalone server that can target either o
 [![](https://images.microbadger.com/badges/version/javanile/novnc.svg)](https://microbadger.com/images/javanile/novnc "Get your own version badge on microbadger.com")
 
 ## Usage
-Place NoVNC service into your docker-compose.yml file
+1. Place NoVNC service into your docker-compose.yml file
 ```yml
 version: '2'
 
@@ -32,7 +32,11 @@ services:
       - 4444:4444
       - 5900:5900
 ```
-Now visit this http://localhost:8081 boom!
+2. Run container with follow command
+```bash
+docker-compose up -d
+```
+3. Now visit this http://localhost:8081 boom!
 
 ## Configuration
 Two environment variables exist in the docker file for configuration REMOTE_HOST and REMOTE_PORT.
@@ -45,6 +49,6 @@ Two environment variables exist in the docker file for configuration REMOTE_HOST
 **8081** is exposed by default.
 
 ## Standalone usage
-```
+```bash
 docker run -d -e REMOTE_HOST=192.168.86.135 -e REMOTE_PORT=5901 javanile/novnc
 ```
