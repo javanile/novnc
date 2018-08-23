@@ -8,16 +8,15 @@ Two environment variables exist in the docker file for configuration REMOTE_HOST
 
 ### Variables
 
-**REMOTE_HOST** Host running a VNC Server to connect to - defaults to *localhost*
-**REMOTE_PORT** Port that the VNC Server is listening on - defaults to *5900*
+- **REMOTE_HOST** Host running a VNC Server to connect to - defaults to *localhost*
+- **REMOTE_PORT** Port that the VNC Server is listening on - defaults to *5900*
 
 ### Ports
 **8081** is exposed by default.
 
-## Usage
-
+## Standalone usage
 ```
-docker run -d -e REMOTE_HOST=192.168.86.135 -e REMOTE_PORT=5901 dougw/novnc
+docker run -d -e REMOTE_HOST=192.168.86.135 -e REMOTE_PORT=5901 javanile/novnc
 ```
 
 
